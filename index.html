@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>From Scratch</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin:0; padding:0; line-height:1.5; color:#333; }
+    header, footer { background:#fff; border-bottom:1px solid #ddd; position:sticky; top:0; z-index:100; }
+    header .container, footer .container, section .container { max-width:1200px; margin:0 auto; padding:1rem; }
+    nav a { margin:0 0.5rem; text-decoration:none; color:#333; }
+    nav a:hover { text-decoration:underline; }
+    .hero { display:grid; grid-template-columns:1fr 1fr; gap:2rem; padding:3rem 1rem; align-items:center; }
+    .hero img { width:100%; border-radius:1rem; }
+    .btn { display:inline-block; padding:0.75rem 1.25rem; border-radius:0.75rem; text-decoration:none; font-weight:bold; }
+    .btn-primary { background:#000; color:#fff; }
+    .btn-outline { border:1px solid #000; color:#000; }
+    .section { padding:3rem 1rem; }
+    .products { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:1.5rem; }
+    .card { border:1px solid #ddd; border-radius:1rem; overflow:hidden; background:#fff; display:flex; flex-direction:column; }
+    .card img { width:100%; height:180px; object-fit:cover; }
+    .card-body { padding:1rem; flex:1; display:flex; flex-direction:column; }
+    .card h3 { margin:0; font-size:1.1rem; }
+    .card p { font-size:0.9rem; margin:0.25rem 0; }
+    .price { font-weight:bold; margin-top:auto; }
+    .faq details { border:1px solid #ddd; border-radius:0.75rem; padding:1rem; background:#fff; }
+    footer { border-top:1px solid #ddd; text-align:center; padding:2rem 1rem; }
+    .floating { position:fixed; bottom:1rem; right:1rem; background:#000; color:#fff; padding:0.75rem 1rem; border-radius:2rem; text-decoration:none; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container" style="display:flex; justify-content:space-between; align-items:center;">
+      <h1>From Scratch</h1>
+      <nav>
+        <a href="#menu">Menú</a>
+        <a href="#sobre">Sobre nosotros</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div>
+      <h2>Panadería artesanal y huerto fresco</h2>
+      <p>Productos horneados y cosechas frescas: hechos con cariño y dedicación.</p>
+      <a href="#menu" class="btn btn-primary">Ver menú</a>
+      <a href="#contacto" class="btn btn-outline">Hacer pedido</a>
+      <p style="margin-top:1rem;">🚚 Entregas locales el mismo día</p>
+    </div>
+    <div>
+      <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=1400&auto=format&fit=crop" alt="Productos del huerto" />
+    </div>
+  </section>
+
+  <section id="menu" class="section">
+    <div class="container">
+      <h2>Nuestro Menú</h2>
+      <div class="products">
+        <!-- Productos horneados -->
+        <div class="card"><img src="https://images.unsplash.com/photo-1605478371319-3d9d5e7a0e89?q=80&w=1200&auto=format&fit=crop"><div class="card-body"><h3>Pan de banana</h3><p>Pieza</p><p class="price">$100</p></div></div>
+        <div class="card"><img src="https://images.unsplash.com/photo-1617196038437-9b64f06f25c5?q=80&w=1200&auto=format&fit=crop"><div class="card-body"><h3>Pan de zanahoria</h3><p>Pieza</p><p class="price">$95</p></div></div>
+        <div class="card"><img src="https://images.unsplash.com/photo-1608198093002-ad4e0054848b?q=80&w=1200&auto=format&fit=crop"><div class="card-body"><h3>Sourdough bread</h3><p>Pieza</p><p class="price">$120</p></div></div>
+        <div class="card"><img src="https://images.unsplash.com/photo-1599785209707-28f8d13c9cb5?q=80&w=1200&auto=format&fit=crop"><div class="card-body"><h3>Brownie</h3><p>Pieza</p><p class="price">$60</p></div></div>
+        <div class="card"><img src="https://images.unsplash.com/photo-1548365328-9f547fb095de?q=80&w=1200&auto=format&fit=crop"><div class="card-body"><h3>Chocolate chips cookie</h3><p>Docena</p><p class="price">$120</p></div></div>
+        <div class="card"><img src="https://images.unsplash.com/photo-1607082349566-1873421b17dd?q=80&w=1200&auto=format&fit=crop"><div class="card-body"><h3>Cinnamon roll cookie</h3><p>Docena</p><p class="price">$140</p></div></div>
+        <div class="card"><img src="https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b?q=80&w=1200&auto=format&fit=crop"><div class="card-body"><h3>Brownie cookie</h3><p>Docena</p><p class="price">$130</p></div></div>
+        <div class="card"><img src="https://images.unsplash.com/photo-1607083206825-13c85f7ef03d?q=80&w=1200&auto=format&fit=crop"><div class="card-body"><h3>Caramel apple cookie</h3><p>Docena</p><p class="price">$150</p></div></div>
+        <div class="card"><img src="https://images.unsplash.com/photo-1607082349250-fc5968940f36?q=80&w=1200&auto=format&fit=crop"><div class="card-body"><h3>Birthday cake cookie</h3><p>Docena</p><p class="price">$150</p></div></div>
+        <!-- Huevos y huerto -->
+        <div class="card"><img src="https://images.unsplash.com/photo-1517959105821-eaf2591984c2?q=80&w=1200&auto=format&fit=crop"><div class="card-body"><h3>Huevos frescos</h3><p>Docena</p><p class="price">$90</p></div></div>
+        <div class="card"><img src="https://images.unsplash.com/photo-1607300005089-4933c6d53295?q=80&w=1200&auto=format&fit=crop"><div class="card-body"><h3>Zanahorias</h3><p>Kg</p><p class="price">$60</p></div></div>
+        <div class="card"><img src="https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?q=80&w=1200&auto=format&fit=crop"><div class="card-body"><h3>Tomates</h3><p>Kg</p><p class="price">$70</p></div></div>
+        <div class="card"><img src="https://images.unsplash.com/photo-1607300005221-60b52f8cde45?q=80&w=1200&auto=format&fit=crop"><div class="card-body"><h3>Pimientos</h3><p>Kg</p><p class="price">$80</p></div></div>
+        <div class="card"><img src="https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?q=80&w=1200&auto=format&fit=crop"><div class="card-body"><h3>Pepinos</h3><p>Kg</p><p class="price">$50</p></div></div>
+        <!-- Mermeladas -->
+        <div class="card"><img src="https://images.unsplash.com/photo-1464965911861-746a04b4bca6?q=80&w=1200&auto=format&fit=crop"><div class="card-body"><h3>Jalea de fresa</h3><p>Frasco 250g</p><p class="price">$75</p></div></div>
+        <div class="card"><img src="https://images.unsplash.com/photo-1506806732259-39c2d0268443?q=80&w=1200&auto=format&fit=crop"><div class="card-body"><h3>Jalea de blueberry</h3><p>Frasco 250g</p><p class="price">$85</p></div></div>
+        <div class="card"><img src="https://images.unsplash.com/photo-1605026114777-7d8f6c6714bb?q=80&w=1200&auto=format&fit=crop"><div class="card-body"><h3>Jalea de mango</h3><p>Frasco 250g</p><p class="price">$80</p></div></div>
+        <div class="card"><img src="https://images.unsplash.com/photo-1590080875831-0c7aa8ef3c52?q=80&w=1200&auto=format&fit=crop"><div class="card-body"><h3>Jalea de durazno</h3><p>Frasco 250g</p><p class="price">$85</p></div></div>
+        <div class="card"><img src="https://images.unsplash.com/photo-1617196038437-9b64f06f25c5?q=80&w=1200&auto=format&fit=crop"><div class="card-body"><h3>Jalea de manzana</h3><p>Frasco 250g</p><p class="price">$80</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="sobre" class="section" style="background:#f9f9f9;">
+    <div class="container" style="display:grid; grid-template-columns:1fr 1fr; gap:2rem; align-items:center;">
+      <div>
+        <h2>De nuestra cocina y huerto a tu mesa</h2>
+        <p>Somos una panadería artesanal y huerto local. Creemos en ingredientes simples,
+        manos cuidadosas y el tiempo que hace la diferencia.</p>
+        <ul>
+          <li>🌱 Sin conservadores</li>
+          <li>🌱 Harinas y frutas locales</li>
+          <li>🌱 Gallinas de libre pastoreo</li>
+        </ul>
+      </div>
+      <div>
+        <img src="https://images.unsplash.com/photo-1466637574441-749b8f19452f?q=80&w=1400&auto=format&fit=crop" alt="Huerto urbano" style="width:100%; border-radius:1rem;" />
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="section">
+    <div class="container faq">
+      <h2>Preguntas frecuentes</h2>
+      <details><summary>¿Cómo hago un pedido?</summary><p>Selecciona tus productos y escríbenos por WhatsApp o correo.</p></details>
+      <details><summary>¿Hacen entregas?</summary><p>Sí, entregamos en la zona o puedes recoger en el local.</p></details>
+      <details><summary>¿Los huevos son orgánicos?</summary><p>Son frescos y de gallinas de libre pastoreo.</p></details>
+      <details><summary>¿Aceptan pedidos especiales?</summary><p>Sí, para eventos y ocasiones. Escríbenos con 48h de anticipación.</p></details>
+    </div>
+  </section>
+
+  <section id="contacto" class="section" style="background:#f9f9f9; text-align:center;">
+    <div class="container">
+      <h2>¿List@ para ordenar?</h2>
+      <p>Escríbenos: respondemos rápido.</p>
+      <p>
+        <a href="https://wa.me/17866258523?text=Hola,%20quiero%20hacer%20un%20pedido%20😊" class="btn btn-primary">WhatsApp</a>
+        <a href="mailto:belhernandez1993@gmail.com?subject=Pedido%20nuevo" class="btn btn-outline">Correo</a>
+      </p>
+      <p style="margin-top:1rem;">Tel. 786-625-8523</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 From Scratch · Hecho con ♥</p>
+    </div>
+  </footer>
+
+  <a href="#menu" class="floating">❤️ 10% dto en tu primer pedido</a>
+</body>
+</html>
